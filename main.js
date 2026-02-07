@@ -21,7 +21,9 @@
 //
 // We store the “name” of the current screen as a string.
 // Only one screen should be active at a time.
-let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
+//let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
+
+let currentScreen = "start"; // "start" | "game" | "return" | "left" | "right" | "straight"
 
 // ------------------------------
 // setup() runs ONCE at the beginning
@@ -49,10 +51,11 @@ function draw() {
   //   lose.js          → drawLose()
 
   if (currentScreen === "start") drawStart();
-  else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
-  else if (currentScreen === "win") drawWin();
-  else if (currentScreen === "lose") drawLose();
+  else if (currentScreen === "return") drawReturn();
+  else if (currentScreen === "left") drawLeft();
+  else if (currentScreen === "right") drawRight();
+  else if (currentScreen === "straight") drawStraight();
 
   // (Optional teaching note)
   // This “if/else chain” is a very common early approach.
@@ -74,34 +77,15 @@ function mousePressed() {
   // lose.js          → loseMousePressed()
 
   if (currentScreen === "start") startMousePressed();
-  else if (currentScreen === "instr") instrMousePressed();
   else if (currentScreen === "game") gameMousePressed();
+  else if (currentScreen === "return") returnMousePressed();
   // The ?.() means “call this function only if it exists”
   // This prevents errors if a screen doesn’t implement a handler.
-  else if (currentScreen === "win") winMousePressed?.();
-  else if (currentScreen === "lose") loseMousePressed?.();
+  else if (currentScreen === "left") leftMousePressed?.();
+  else if (currentScreen === "right") rightMousePressed?.();
+  else if (currentScreen === "straight") straightMousePressed();
 }
 
-// ------------------------------
-// keyPressed() runs once each time a key is pressed
-// ------------------------------
-// This routes keyboard input to the correct screen handler.
-function keyPressed() {
-  // Each screen *may* define a key handler:
-  // start.js         → startKeyPressed()
-  // instructions.js  → instrKeyPressed()
-  // game.js          → gameKeyPressed()
-  // win.js           → winKeyPressed()
-  // lose.js          → loseKeyPressed()
-
-  if (currentScreen === "start") startKeyPressed();
-  else if (currentScreen === "instr") instrKeyPressed();
-  else if (currentScreen === "game") gameKeyPressed?.();
-  else if (currentScreen === "win") winKeyPressed?.();
-  else if (currentScreen === "lose") loseKeyPressed?.();
-}
-
-// ------------------------------------------------------------
 // Shared helper function: isHover()
 // ------------------------------------------------------------
 //

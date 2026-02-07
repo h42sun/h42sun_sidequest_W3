@@ -42,12 +42,10 @@ function drawStart() {
 
   // Draw both buttons
   drawButton(startBtn);
-  drawButton(instrBtn);
-
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
   // so the player knows it is clickable.
-  const over = isHover(startBtn) || isHover(instrBtn);
+  const over = isHover(startBtn);
   cursor(over ? HAND : ARROW);
 }
 
@@ -58,7 +56,6 @@ function drawStart() {
 function startMousePressed() {
   // For input checks, we only need x,y,w,h (label is optional)
   const startBtn = { x: width / 2, y: 320, w: 240, h: 80 };
-  const instrBtn = { x: width / 2, y: 430, w: 240, h: 80 };
 
   // If START is clicked, go to the game screen
   if (isHover(startBtn)) {
