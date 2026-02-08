@@ -1,4 +1,15 @@
+const backBtn = {
+  x: width / 2, // x position (centre of the button)
+  y: 560, // y position (centre of the button)
+  w: 220, // width
+  h: 70, // height
+  label: "Return", // text shown on the button
+};
+
 function drawLeft() {
+  //add one collection point
+  collect = collect + 1;
+
   // Light neutral background
   background(240);
 
@@ -20,13 +31,13 @@ function drawLeft() {
 
   // ---- Back button ----
   // This button lets the player return to the start screen
-  const backBtn = {
-    x: width / 2, // centred horizontally
-    y: 560,
-    w: 220,
-    h: 70,
-    label: "Return",
-  };
+  //   const backBtn = {
+  //     x: width / 2, // centred horizontally
+  //     y: 560,
+  //     w: 220,
+  //     h: 70,
+  //     label: "Return",
+  //   };
 
   // Draw the back button
   drawLeftButton(backBtn);
@@ -48,8 +59,6 @@ function leftMousePressed() {
     currentScreen = "game";
   }
 }
-
-//need to add another
 
 function drawLeftButton({ x, y, w, h, label }) {
   rectMode(CENTER);

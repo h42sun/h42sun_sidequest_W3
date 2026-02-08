@@ -1,4 +1,20 @@
-function drawRight() {
+const yesBtn = {
+  x: width / 2,
+  y: 300,
+  w: 220,
+  h: 70,
+  label: "Yes",
+};
+
+const noBtn = {
+  x: width / 2,
+  y: 425,
+  w: 220,
+  h: 70,
+  label: "No",
+};
+
+function drawStraight() {
   //add one collection point
   collect = collect + 1;
 
@@ -9,7 +25,7 @@ function drawRight() {
   fill(0);
   textAlign(CENTER, TOP);
   textSize(36);
-  text("Right Side", width / 2, 80);
+  text("Shore", width / 2, 80);
 
   // ---- Instruction text ----
   textSize(18);
@@ -17,23 +33,14 @@ function drawRight() {
   // \n creates a line break in the text
   // This is useful for simple multi-line instructions
   const lines =
-    "The wind blows through your hair, your clothes flapping in the wind.\n" +
-    "It smells salty and fresh, like the ocean. May be a little obvious, but it's true.";
+    "As you walk along the shore, the waves gently crash over your feet…\n" +
+    "You couldn’t help but sink them into the wet sand. Leave a signature?";
 
   text(lines, width / 2, 160);
 
-  // ---- Back button ----
-  // This button lets the player return to the start screen
-  const backBtn = {
-    x: width / 2, // centred horizontally
-    y: 560,
-    w: 220,
-    h: 70,
-    label: "Return",
-  };
-
-  // Draw the back button
-  drawRightButton(backBtn);
+  // Draw the buttons
+  drawStraightButton(yesBtn);
+  drawStraightButton(noBtn);
 
   // Change cursor when hovering over the button
   cursor(isHover(backBtn) ? HAND : ARROW);
@@ -43,7 +50,7 @@ function drawRight() {
 // Mouse input for instructions screen
 // ------------------------------
 // Called from main.js only when currentScreen === "instr"
-function rightMousePressed() {
+function straightMousePressed() {
   // Button data must match the draw position
   const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
 

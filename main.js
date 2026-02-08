@@ -21,27 +21,20 @@
 //
 // We store the “name” of the current screen as a string.
 // Only one screen should be active at a time.
-//let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
 
 let currentScreen = "start"; // "start" | "game" | "return" | "left" | "right" | "straight"
 
-// ------------------------------
-// setup() runs ONCE at the beginning
-// ------------------------------
-// This is where you usually set canvas size and initial settings.
 function setup() {
   createCanvas(800, 800);
 
   // Sets a default font for all text() calls
   // (This can be changed later per-screen if you want.)
   textFont("sans-serif");
+
+  //create variable to keep track of
+  let collect = 0;
 }
 
-// ------------------------------
-// draw() runs every frame (many times per second)
-// ------------------------------
-// This is the core “router” for visuals.
-// Depending on currentScreen, we call the correct draw function.
 function draw() {
   // Each screen file defines its own draw function:
   //   start.js         → drawStart()
@@ -56,12 +49,6 @@ function draw() {
   else if (currentScreen === "left") drawLeft();
   else if (currentScreen === "right") drawRight();
   else if (currentScreen === "straight") drawStraight();
-
-  // (Optional teaching note)
-  // This “if/else chain” is a very common early approach.
-  // Later in the course you might replace it with:
-  // - a switch statement, or
-  // - an object/map of screens
 }
 
 // ------------------------------

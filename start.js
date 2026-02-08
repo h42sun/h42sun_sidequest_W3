@@ -16,9 +16,9 @@ function drawStart() {
 
   // ---- Title text ----
   fill(30, 50, 60);
-  textSize(46);
+  textSize(36);
   textAlign(CENTER, CENTER);
-  text("Win or Lose", width / 2, 180);
+  text("Let’s go explore the beach today.", width / 2, 180);
 
   // ---- Buttons (data only) ----
   // These objects store the position/size/label for each button.
@@ -32,15 +32,7 @@ function drawStart() {
     label: "START",
   };
 
-  const instrBtn = {
-    x: width / 2,
-    y: 430,
-    w: 240,
-    h: 80,
-    label: "INSTRUCTIONS",
-  };
-
-  // Draw both buttons
+  // Draw the buttons
   drawButton(startBtn);
   // ---- Cursor feedback ----
   // If the mouse is over either button, show a hand cursor
@@ -61,10 +53,6 @@ function startMousePressed() {
   if (isHover(startBtn)) {
     currentScreen = "game";
   }
-  // If INSTRUCTIONS is clicked, go to the instructions screen
-  else if (isHover(instrBtn)) {
-    currentScreen = "instr";
-  }
 }
 
 // ------------------------------------------------------------
@@ -76,10 +64,6 @@ function startMousePressed() {
 function startKeyPressed() {
   if (keyCode === ENTER) {
     currentScreen = "game";
-  }
-
-  if (key === "i" || key === "I") {
-    currentScreen = "instr";
   }
 }
 
