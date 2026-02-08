@@ -34,16 +34,6 @@ function drawSglass() {
 
   text(lines, 400, 160);
 
-  // ---- Back button ----
-  // This button lets the player return to the start screen
-  //   const backBtn = {
-  //     x: 400, // centred horizontally
-  //     y: 560,
-  //     w: 220,
-  //     h: 70,
-  //     label: "Return",
-  //   };
-
   // Draw the back button
   drawSglassButton(backBtn);
 
@@ -57,7 +47,7 @@ function drawSglass() {
 // Called from main.js only when currentScreen === "instr"
 function sglassMousePressed() {
   // Button data must match the draw position
-  const backBtn = { x: 400, y: 560, w: 220, h: 70 };
+  //   const backBtn = { x: 400, y: 560, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
   if (isHover(backBtn)) {

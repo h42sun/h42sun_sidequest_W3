@@ -24,7 +24,8 @@ function drawHome() {
     textSize(18);
     const lines =
       "Today was a good day. \n" +
-      "You went to the beach, smelled the salty sea air, saw the blue waves crash against the soft, white sand...\n" +
+      "You went to the beach, smelled the salty sea air,\n" +
+      "saw the blue waves crash against the soft, white sand...\n" +
       "I wonder what tomorrow has in store for us.";
 
     //draw text.

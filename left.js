@@ -28,7 +28,13 @@ function drawLeft() {
   textSize(18);
 
   const lines =
-    "The sand is warm from the sunshine.\n" + "It glitters a little, too.";
+    "The sand is warm from the sunshine. It glitters a little, too.\n" +
+    "\n" +
+    "Out the corner of your eye, you see some pretty seashells and corals.\n" +
+    "\n" +
+    "As you walk over, you notice some of the spiral shells moving.\n" +
+    "\n" +
+    "Oh...! It's a little hermit crab. How cute.";
 
   text(lines, 400, 160);
 
