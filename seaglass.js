@@ -47,7 +47,7 @@ function drawSeaglass() {
 // Called from main.js only when currentScreen === "instr"
 function seaglassMousePressed() {
   // Button data must match the draw position
-  //   const backBtn = { x: 400, y: 560, w: 220, h: 70 };
+  const backBtn = { x: 400, y: 560, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
   if (isHover(backBtn)) {
