@@ -6,13 +6,13 @@ const backBtn = {
   label: "Return", // text shown on the button
 };
 
-let sglassVisited = false;
+let seaglassVisited = false;
 
-function drawSglass() {
+function drawSeaglass() {
   //add one collection point
-  if (!sglassVisited) {
+  if (!seaglassVisited) {
     collect++;
-    sglassVisited = true;
+    seaglassVisited = true;
   }
 
   // Light neutral background
@@ -35,7 +35,7 @@ function drawSglass() {
   text(lines, 400, 160);
 
   // Draw the back button
-  drawSglassButton(backBtn);
+  drawSeaglassButton(backBtn);
 
   // Change cursor when hovering over the button
   cursor(isHover(backBtn) ? HAND : ARROW);
@@ -45,7 +45,7 @@ function drawSglass() {
 // Mouse input for instructions screen
 // ------------------------------
 // Called from main.js only when currentScreen === "instr"
-function sglassMousePressed() {
+function seaglassMousePressed() {
   // Button data must match the draw position
   //   const backBtn = { x: 400, y: 560, w: 220, h: 70 };
 
@@ -55,13 +55,13 @@ function sglassMousePressed() {
   }
 }
 
-function sglassKeyPressed() {
+function seaglassKeyPressed() {
   if (keyCode === "r" || "R") {
     currentScreen = "game";
   }
 }
 
-function drawSglassButton({ x, y, w, h, label }) {
+function drawSeaglassButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check whether the mouse is hovering over the button
