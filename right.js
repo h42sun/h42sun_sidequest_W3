@@ -21,7 +21,7 @@ function drawRight() {
   // ---- Screen title ----
   fill(0);
   textAlign(CENTER, TOP);
-  textSize(36);
+  textSize(32);
   text("Right Side", 400, 80);
 
   // ---- Instruction text ----

@@ -21,7 +21,7 @@ function drawLeft() {
   // ---- Screen title ----
   fill(0);
   textAlign(CENTER, TOP);
-  textSize(36);
+  textSize(32);
   text("Left Side", 400, 80);
 
   // ---- Instruction text ----

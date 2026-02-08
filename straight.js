@@ -14,7 +14,7 @@ const noBtn = {
   label: "No",
 };
 
-let straightVisit = false;
+let straightVisited = false;
 
 function drawStraight() {
   //add one collection point
@@ -29,7 +29,7 @@ function drawStraight() {
   // ---- Screen title ----
   fill(0);
   textAlign(CENTER, TOP);
-  textSize(36);
+  textSize(32);
   text("Shore", 400, 80);
 
   // ---- Instruction text ----

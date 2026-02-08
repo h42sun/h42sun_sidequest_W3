@@ -21,6 +21,7 @@ function drawHome() {
     textSize(36);
     text("End of Day: Explored...", 400, 80);
 
+    textSize(18);
     const lines =
       "Today was a good day. \n" +
       "You went to the beach, smelled the salty sea air, saw the blue waves crash against the soft, white sand...\n" +
