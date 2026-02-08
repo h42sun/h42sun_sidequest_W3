@@ -1,6 +1,6 @@
 function drawHome() {
   background(180, 225, 220); //same as starting screen
-  if ((collect = 0)) {
+  if (collect === 0) {
     // ---- Screen title ----
     fill(0);
     textAlign(CENTER, TOP);
@@ -14,7 +14,7 @@ function drawHome() {
       "Go for some fresh air once in a while, alright?";
     //draw text.
     text(lines, width / 2, 160);
-  } else if (collect > 0 && collect < 3) {
+  } else if (collect > 0 && collect < 4) {
     // ---- Screen title ----
     fill(0);
     textAlign(CENTER, TOP);
@@ -28,7 +28,7 @@ function drawHome() {
 
     //draw text.
     text(lines, width / 2, 160);
-  } else if (collect >= 3) {
+  } else if (collect >= 4) {
     // ---- Screen title ----
     fill(0);
     textAlign(CENTER, TOP);

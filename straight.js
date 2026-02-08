@@ -14,9 +14,14 @@ const noBtn = {
   label: "No",
 };
 
+let straightVisit = false;
+
 function drawStraight() {
   //add one collection point
-  collect = collect + 1;
+  if (!straightVisited) {
+    collect++;
+    straightVisited = true;
+  }
 
   // Light neutral background
   background(240);
@@ -43,7 +48,11 @@ function drawStraight() {
   drawStraightButton(noBtn);
 
   // Change cursor when hovering over the button
-  cursor(isHover(backBtn) ? HAND : ARROW);
+  if (isHover(yesBtn) || isHover(noBtn)) {
+    cursor(HAND);
+  } else {
+    cursor(ARROW);
+  }
 }
 
 // ------------------------------
@@ -52,15 +61,21 @@ function drawStraight() {
 // Called from main.js only when currentScreen === "instr"
 function straightMousePressed() {
   // Button data must match the draw position
-  const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
+  const yesBtn = { x: width / 2, y: 300, w: 220, h: 70 };
+  const noBtn = { x: width / 2, y: 425, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
-  if (isHover(backBtn)) {
+  if (isHover(yesBtn)) {
+    collect++;
+    currentScreen = "seaglass";
+  }
+
+  if (isHover(noBtn)) {
     currentScreen = "game";
   }
 }
 
-function drawRightButton({ x, y, w, h, label }) {
+function drawStraightButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
   // Check whether the mouse is hovering over the button

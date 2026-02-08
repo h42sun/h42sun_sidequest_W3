@@ -23,6 +23,8 @@
 // Only one screen should be active at a time.
 
 let currentScreen = "start"; // "start" | "game" | "return" | "left" | "right" | "straight"
+//create variable to keep track of
+let collect = 0;
 
 function setup() {
   createCanvas(800, 800);
@@ -30,9 +32,6 @@ function setup() {
   // Sets a default font for all text() calls
   // (This can be changed later per-screen if you want.)
   textFont("sans-serif");
-
-  //create variable to keep track of
-  let collect = 0;
 }
 
 function draw() {
@@ -49,6 +48,8 @@ function draw() {
   else if (currentScreen === "left") drawLeft();
   else if (currentScreen === "right") drawRight();
   else if (currentScreen === "straight") drawStraight();
+  else if (currentScreen === "home") drawHome();
+  else if (currentScreen === "seaglass") drawSeaglass();
 }
 
 // ------------------------------

@@ -66,10 +66,16 @@ function drawGame() {
   // ---- Cursor feedback ----
   // If the mouse is over the button, show a hand cursor
   // Otherwise, show the normal arrow cursor
-  cursor(isHover(leftBtn) ? HAND : ARROW);
-  cursor(isHover(rightBtn) ? HAND : ARROW);
-  cursor(isHover(straightBtn) ? HAND : ARROW);
-  cursor(isHover(homeBtn) ? HAND : ARROW);
+  if (
+    isHover(leftBtn) ||
+    isHover(rightBtn) ||
+    isHover(straightBtn) ||
+    isHover(homeBtn)
+  ) {
+    cursor(HAND);
+  } else {
+    cursor(ARROW);
+  }
 }
 
 // ------------------------------

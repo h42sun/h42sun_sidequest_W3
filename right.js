@@ -1,4 +1,20 @@
+// const backBtn = {
+//   x: width / 2, // x position (centre of the button)
+//   y: 560, // y position (centre of the button)
+//   w: 220, // width
+//   h: 70, // height
+//   label: "Return", // text shown on the button
+// };
+
+let rightVisited = false;
+
 function drawRight() {
+  //add one collection point
+  if (!rightVisited) {
+    collect++;
+    rightVisited = true;
+  }
+
   // Light neutral background
   background(240);
 
@@ -70,6 +86,3 @@ function drawRightButton({ x, y, w, h, label }) {
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
-
-//add one collection point
-collect = collect + 1;
