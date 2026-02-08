@@ -1,5 +1,5 @@
 const yesBtn = {
-  x: width / 2,
+  x: 400,
   y: 300,
   w: 220,
   h: 70,
@@ -7,7 +7,7 @@ const yesBtn = {
 };
 
 const noBtn = {
-  x: width / 2,
+  x: 400,
   y: 425,
   w: 220,
   h: 70,
@@ -30,7 +30,7 @@ function drawStraight() {
   fill(0);
   textAlign(CENTER, TOP);
   textSize(36);
-  text("Shore", width / 2, 80);
+  text("Shore", 400, 80);
 
   // ---- Instruction text ----
   textSize(18);
@@ -41,7 +41,7 @@ function drawStraight() {
     "As you walk along the shore, the waves gently crash over your feet…\n" +
     "You couldn’t help but sink them into the wet sand. Leave a signature?";
 
-  text(lines, width / 2, 160);
+  text(lines, 400, 160);
 
   // Draw the buttons
   drawStraightButton(yesBtn);
@@ -61,8 +61,8 @@ function drawStraight() {
 // Called from main.js only when currentScreen === "instr"
 function straightMousePressed() {
   // Button data must match the draw position
-  const yesBtn = { x: width / 2, y: 300, w: 220, h: 70 };
-  const noBtn = { x: width / 2, y: 425, w: 220, h: 70 };
+  const yesBtn = { x: 400, y: 300, w: 220, h: 70 };
+  const noBtn = { x: 400, y: 425, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
   if (isHover(yesBtn)) {

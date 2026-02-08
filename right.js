@@ -1,5 +1,5 @@
 // const backBtn = {
-//   x: width / 2, // x position (centre of the button)
+//   x: 400, // x position (centre of the button)
 //   y: 560, // y position (centre of the button)
 //   w: 220, // width
 //   h: 70, // height
@@ -22,7 +22,7 @@ function drawRight() {
   fill(0);
   textAlign(CENTER, TOP);
   textSize(36);
-  text("Right Side", width / 2, 80);
+  text("Right Side", 400, 80);
 
   // ---- Instruction text ----
   textSize(18);
@@ -33,12 +33,12 @@ function drawRight() {
     "The wind blows through your hair, your clothes flapping in the wind.\n" +
     "It smells salty and fresh, like the ocean. May be a little obvious, but it's true.";
 
-  text(lines, width / 2, 160);
+  text(lines, 400, 160);
 
   // ---- Back button ----
   // This button lets the player return to the start screen
   const backBtn = {
-    x: width / 2, // centred horizontally
+    x: 400, // centred horizontally
     y: 560,
     w: 220,
     h: 70,
@@ -58,7 +58,7 @@ function drawRight() {
 // Called from main.js only when currentScreen === "instr"
 function rightMousePressed() {
   // Button data must match the draw position
-  const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
+  const backBtn = { x: 400, y: 560, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
   if (isHover(backBtn)) {
