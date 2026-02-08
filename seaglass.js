@@ -65,6 +65,12 @@ function sglassMousePressed() {
   }
 }
 
+function sglassKeyPressed() {
+  if (keyCode === "r" || "R") {
+    currentScreen = "game";
+  }
+}
+
 function drawSglassButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 

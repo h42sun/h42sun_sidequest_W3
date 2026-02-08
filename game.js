@@ -139,12 +139,21 @@ function gameMousePressed() {
 // // Keyboard input for this screen
 // // ------------------------------
 // // Allows keyboard-only interaction (accessibility + design)
-// function gameKeyPressed() {
-//   // ENTER key triggers the same behaviour as clicking the button
-//   if (keyCode === ENTER) {
-//     triggerRandomOutcome();
-//   }
-// }
+function gameKeyPressed() {
+  // ENTER key triggers the same behaviour as clicking the button
+  if (keyCode === LEFT_ARROW) {
+    currentScreen = "left";
+  }
+  if (keyCode === RIGHT_ARROW) {
+    currentScreen = "right";
+  }
+  if (keyCode === UP_ARROW) {
+    currentScreen = "straight";
+  }
+  if (keyCode === DOWN_ARROW) {
+    currentScreen = "home";
+  }
+}
 
 // // ------------------------------
 // // Game logic: win or lose

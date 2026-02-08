@@ -49,7 +49,7 @@ function draw() {
   else if (currentScreen === "right") drawRight();
   else if (currentScreen === "straight") drawStraight();
   else if (currentScreen === "home") drawHome();
-  else if (currentScreen === "seaglass") drawSeaglass();
+  else if (currentScreen === "seaglass") drawSglass();
 }
 
 // ------------------------------
@@ -72,6 +72,28 @@ function mousePressed() {
   else if (currentScreen === "left") leftMousePressed?.();
   else if (currentScreen === "right") rightMousePressed?.();
   else if (currentScreen === "straight") straightMousePressed();
+  else if (currentScreen === "seaglass") sglassMousePressed();
+}
+
+// ------------------------------
+// keyPressed() runs once each time a key is pressed
+// ------------------------------
+// This routes keyboard input to the correct screen handler.
+function keyPressed() {
+  // Each screen *may* define a key handler:
+  // start.js         → startKeyPressed()
+  // instructions.js  → instrKeyPressed()
+  // game.js          → gameKeyPressed()
+  // win.js           → winKeyPressed()
+  // lose.js          → loseKeyPressed()
+
+  if (currentScreen === "start") startKeyPressed();
+  else if (currentScreen === "game") gameKeyPressed?.();
+  else if (currentScreen === "return") returnKeyPressed();
+  else if (currentScreen === "left") leftKeyPressed?.();
+  else if (currentScreen === "right") rightKeyPressed?.();
+  else if (currentScreen === "straight") straightKeyPressed();
+  else if (currentScreen === "seaglass") sglassKeyPressed();
 }
 
 // Shared helper function: isHover()

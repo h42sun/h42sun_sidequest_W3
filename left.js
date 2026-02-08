@@ -63,6 +63,12 @@ function leftMousePressed() {
   }
 }
 
+function leftKeyPressed() {
+  if (keyCode === "r" || "R") {
+    currentScreen = "game";
+  }
+}
+
 function drawLeftButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 

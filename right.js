@@ -66,6 +66,12 @@ function rightMousePressed() {
   }
 }
 
+function rightKeyPressed() {
+  if (keyCode === "r" || "R") {
+    currentScreen = "game";
+  }
+}
+
 function drawRightButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 

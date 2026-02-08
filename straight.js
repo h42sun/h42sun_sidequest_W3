@@ -75,6 +75,15 @@ function straightMousePressed() {
   }
 }
 
+function straightKeyPressed() {
+  if (keyCode === "y" || "Y") {
+    currentScreen = "seaglass";
+  }
+  if (keyCode === "n" || "N") {
+    currentScreen = "game";
+  }
+}
+
 function drawStraightButton({ x, y, w, h, label }) {
   rectMode(CENTER);
 
