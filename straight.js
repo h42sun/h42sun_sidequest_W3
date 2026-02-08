@@ -78,8 +78,7 @@ function straightMousePressed() {
 function straightKeyPressed() {
   if (keyCode === "y" || "Y") {
     currentScreen = "seaglass";
-  }
-  if (keyCode === "n" || "N") {
+  } else if (keyCode === "n" || "N") {
     currentScreen = "game";
   }
 }
