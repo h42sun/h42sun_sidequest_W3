@@ -7,9 +7,6 @@ const backBtn = {
 };
 
 function drawLeft() {
-  //add one collection point
-  collect = collect + 1;
-
   // Light neutral background
   background(240);
 
@@ -22,8 +19,6 @@ function drawLeft() {
   // ---- Instruction text ----
   textSize(18);
 
-  // \n creates a line break in the text
-  // This is useful for simple multi-line instructions
   const lines =
     "The sand is warm from the sunshine.\n" + "It glitters a little, too.";
 
@@ -80,3 +75,6 @@ function drawLeftButton({ x, y, w, h, label }) {
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
+
+//add one collection point
+collect = collect + 1;

@@ -1,4 +1,4 @@
-function home() {
+function drawHome() {
   background(180, 225, 220); //same as starting screen
   if ((collect = 0)) {
     // ---- Screen title ----

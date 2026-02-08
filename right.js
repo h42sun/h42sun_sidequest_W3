@@ -1,7 +1,4 @@
 function drawRight() {
-  //add one collection point
-  collect = collect + 1;
-
   // Light neutral background
   background(240);
 
@@ -73,3 +70,6 @@ function drawRightButton({ x, y, w, h, label }) {
   textAlign(CENTER, CENTER);
   text(label, x, y);
 }
+
+//add one collection point
+collect = collect + 1;
