@@ -1,39 +1,28 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
-
----
-
-## Authors
-
-Karen Cochrane and David Han
+Side Quest Week 3: The Ocean Calls to You
 
 ---
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+> This project will take the user through a storyline in which they can explore a digital beach, going in different directions and looking at different elements.
+> They can transition between different screens using either mouse or keyboard inputs.
+> A variable will be tracked by how much the user has explored and, at the end, show 3 different ending texts based on their exploration levels.
 
 ---
 
-## Learning Goals
+## Interaction Instructions
 
-- Understand how to manage multiple game states using a shared currentScreen variable
-- Practice separating code across multiple files for readability and maintenance
-- Implement clickable and keyboard-accessible UI buttons
-- Learn how to route draw(), mousePressed(), and keyPressed() logic based on the active screen
-- Build a basic instructions screen with a functional back button
-
----
-
-## Assets
-
-N/A
+> Press ENTER or click on the "Start" button to start the game.
+> Pressing the arrow keys or clicking on the different choices will direct the player to different screens, where they can either press "R", the down arrow key, or click on the button to return to the previous screen to the other choices.
+> To end the game, press R, the down arrow key, or click on the "Go home" button.
+> To restart the game, press ENTER or R, or click on the button on screen.
 
 ---
 
-## GenAI
+## References
 
-The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
+p5.js. 2026. Retrieved from https://p5js.org/libraries/.
 
 ---
