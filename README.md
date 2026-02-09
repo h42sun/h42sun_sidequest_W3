@@ -23,6 +23,6 @@ Side Quest Week 3: The Ocean Calls to You
 
 ## References
 
-p5.js. 2026. Retrieved from https://p5js.org/libraries/.
+[1]p5.js. 2026. Retrieved from https://p5js.org/libraries/.
 
 ---
