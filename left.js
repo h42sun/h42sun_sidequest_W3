@@ -1,4 +1,4 @@
-const backBtn = {
+const leftBackBtn = {
   x: 400, // x position (centre of the button)
   y: 560, // y position (centre of the button)
   w: 220, // width
@@ -15,8 +15,23 @@ function drawLeft() {
     leftVisited = true;
   }
 
-  // Light neutral background
-  background(240);
+  // Set background for the game screen
+  background(176, 243, 245);
+  rectMode(CORNER);
+  //sand
+  fill(255, 250, 212);
+  rect(0, 480, 800, 330);
+  //crabshell
+  fill(176, 96, 69);
+  quad(140, 590, 60, 650, 100, 700, 160, 675);
+  //crab
+  fill(255, 112, 64);
+  ellipse(108, 673, 80, 55);
+  ellipse(60, 678, 30);
+  ellipse(140, 690, 30);
+  fill(0);
+  ellipse(90, 668, 8);
+  ellipse(110, 670, 8);
 
   // ---- Screen title ----
   fill(0);
@@ -29,14 +44,12 @@ function drawLeft() {
 
   const lines =
     "The sand is warm from the sunshine. It glitters a little, too.\n" +
-    "\n" +
     "Out the corner of your eye, you see some pretty seashells and corals.\n" +
     "\n" +
     "As you walk over, you notice some of the spiral shells moving.\n" +
-    "\n" +
     "Oh...! It's a little hermit crab. How cute.";
 
-  text(lines, 400, 160);
+  text(lines, 400, 145);
 
   // ---- Back button ----
   // This button lets the player return to the start screen
@@ -49,10 +62,10 @@ function drawLeft() {
   //   };
 
   // Draw the back button
-  drawLeftButton(backBtn);
+  drawLeftButton(leftBackBtn);
 
   // Change cursor when hovering over the button
-  cursor(isHover(backBtn) ? HAND : ARROW);
+  cursor(isHover(leftBackBtn) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -61,16 +74,16 @@ function drawLeft() {
 // Called from main.js only when currentScreen === "instr"
 function leftMousePressed() {
   // Button data must match the draw position
-  const backBtn = { x: 400, y: 560, w: 220, h: 70 };
+  const leftBackBtn = { x: 400, y: 560, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
-  if (isHover(backBtn)) {
+  if (isHover(leftBackBtn)) {
     currentScreen = "game";
   }
 }
 
 function leftKeyPressed() {
-  if (keyCode === "r" || "R") {
+  if (key === "r" || "R") {
     currentScreen = "game";
   }
 }
@@ -84,7 +97,11 @@ function drawLeftButton({ x, y, w, h, label }) {
   noStroke();
 
   // Subtle colour change on hover for visual feedback
-  fill(hover ? color(200, 200, 255, 200) : color(220, 220, 255, 170));
+  fill(
+    hover
+      ? color(209, 239, 240) // lighter blue on hover
+      : color(255), // white on normal state
+  );
 
   // Draw the button shape
   rect(x, y, w, h, 12);

@@ -71,8 +71,8 @@ function mousePressed() {
   // This prevents errors if a screen doesn’t implement a handler.
   else if (currentScreen === "left") leftMousePressed?.();
   else if (currentScreen === "right") rightMousePressed?.();
-  else if (currentScreen === "straight") straightMousePressed();
-  else if (currentScreen === "seaglass") seaglassMousePressed();
+  else if (currentScreen === "straight") straightMousePressed?.();
+  else if (currentScreen === "seaglass") seaglassMousePressed?.();
 }
 
 // ------------------------------
@@ -92,8 +92,8 @@ function keyPressed() {
   else if (currentScreen === "return") returnKeyPressed();
   else if (currentScreen === "left") leftKeyPressed?.();
   else if (currentScreen === "right") rightKeyPressed?.();
-  else if (currentScreen === "straight") straightKeyPressed();
-  else if (currentScreen === "seaglass") seaglassKeyPressed();
+  else if (currentScreen === "straight") straightKeyPressed?.();
+  else if (currentScreen === "seaglass") seaglassKeyPressed?.();
 }
 
 // Shared helper function: isHover()

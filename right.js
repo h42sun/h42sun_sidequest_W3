@@ -1,10 +1,10 @@
-// const backBtn = {
-//   x: 400, // x position (centre of the button)
-//   y: 560, // y position (centre of the button)
-//   w: 220, // width
-//   h: 70, // height
-//   label: "Return", // text shown on the button
-// };
+const rightBackBtn = {
+  x: 400, // x position (centre of the button)
+  y: 560, // y position (centre of the button)
+  w: 220, // width
+  h: 70, // height
+  label: "Return", // text shown on the button
+};
 
 let rightVisited = false;
 
@@ -15,8 +15,30 @@ function drawRight() {
     rightVisited = true;
   }
 
-  // Light neutral background
-  background(240);
+  // Set background for the game screen
+  background(176, 243, 245);
+  rectMode(CORNER);
+  //sand
+  fill(255, 250, 212);
+  rect(0, 480, 800, 330);
+  //teal rock
+  fill(169, 184, 181);
+  ellipse(673, 510, 45, 35);
+  //coral rock
+  fill(194, 142, 118);
+  ellipse(750, 525, 50, 40);
+  //black rock
+  fill(46, 44, 44);
+  ellipse(590, 560, 80, 30);
+  //blue rock
+  fill(130, 139, 181);
+  ellipse(623, 583, 70, 30);
+  //white rock
+  fill(232, 232, 232);
+  ellipse(710, 550, 60, 35);
+  //drift wood
+  fill(163, 142, 132);
+  quad(450, 650, 430, 720, 800, 720, 800, 660);
 
   // ---- Screen title ----
   fill(0);
@@ -31,13 +53,16 @@ function drawRight() {
   // This is useful for simple multi-line instructions
   const lines =
     "The wind blows through your hair, your clothes flapping in the wind.\n" +
-    "It smells salty and fresh, like the ocean. May be a little obvious, but it's true.";
+    "It smells salty and fresh, like the ocean. May be a little obvious, but it's true.\n" +
+    "\n" +
+    "You look down; there are some cool rocks here, of all sorts of colours.\n" +
+    "There's even a piece of drift wood. Cool.";
 
-  text(lines, 400, 160);
+  text(lines, 400, 145);
 
   // ---- Back button ----
   // This button lets the player return to the start screen
-  const backBtn = {
+  const rightBackBtn = {
     x: 400, // centred horizontally
     y: 560,
     w: 220,
@@ -46,10 +71,10 @@ function drawRight() {
   };
 
   // Draw the back button
-  drawRightButton(backBtn);
+  drawRightButton(rightBackBtn);
 
   // Change cursor when hovering over the button
-  cursor(isHover(backBtn) ? HAND : ARROW);
+  cursor(isHover(rightBackBtn) ? HAND : ARROW);
 }
 
 // ------------------------------
@@ -58,16 +83,16 @@ function drawRight() {
 // Called from main.js only when currentScreen === "instr"
 function rightMousePressed() {
   // Button data must match the draw position
-  const backBtn = { x: 400, y: 560, w: 220, h: 70 };
+  const rightBackBtn = { x: 400, y: 560, w: 220, h: 70 };
 
   // If the button is clicked, return to the start screen
-  if (isHover(backBtn)) {
+  if (isHover(rightBackBtn)) {
     currentScreen = "game";
   }
 }
 
 function rightKeyPressed() {
-  if (keyCode === "r" || "R") {
+  if (key === "r" || "R") {
     currentScreen = "game";
   }
 }
@@ -81,7 +106,11 @@ function drawRightButton({ x, y, w, h, label }) {
   noStroke();
 
   // Subtle colour change on hover for visual feedback
-  fill(hover ? color(200, 200, 255, 200) : color(220, 220, 255, 170));
+  fill(
+    hover
+      ? color(209, 239, 240) // lighter blue on hover
+      : color(255), // white on normal state
+  );
 
   // Draw the button shape
   rect(x, y, w, h, 12);

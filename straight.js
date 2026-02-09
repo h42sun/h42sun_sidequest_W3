@@ -23,8 +23,18 @@ function drawStraight() {
     straightVisited = true;
   }
 
-  // Light neutral background
-  background(240);
+  // Set background for the game screen
+  background(176, 243, 245);
+  rectMode(CORNER);
+  //sand
+  fill(255, 250, 212);
+  rect(0, 480, 800, 330);
+  //sea
+  fill(93, 227, 208, 160);
+  rect(0, 445, 800, 120);
+  //white wave edge
+  fill(255);
+  rect(0, 555, 800, 18);
 
   // ---- Screen title ----
   fill(0);
@@ -34,14 +44,12 @@ function drawStraight() {
 
   // ---- Instruction text ----
   textSize(18);
-
-  // \n creates a line break in the text
-  // This is useful for simple multi-line instructions
   const lines =
     "As you walk along the shore, the waves gently crash over your feet…\n" +
+    "\n" +
     "You couldn’t help but sink them into the wet sand. Leave a signature?";
 
-  text(lines, 400, 160);
+  text(lines, 400, 145);
 
   // Draw the buttons
   drawStraightButton(yesBtn);
@@ -76,9 +84,9 @@ function straightMousePressed() {
 }
 
 function straightKeyPressed() {
-  if (keyCode === "y" || "Y") {
+  if (key === "y" || key === "Y") {
     currentScreen = "seaglass";
-  } else if (keyCode === "n" || "N") {
+  } else if (key === "n" || key === "N") {
     currentScreen = "game";
   }
 }
@@ -92,7 +100,11 @@ function drawStraightButton({ x, y, w, h, label }) {
   noStroke();
 
   // Subtle colour change on hover for visual feedback
-  fill(hover ? color(200, 200, 255, 200) : color(220, 220, 255, 170));
+  fill(
+    hover
+      ? color(209, 239, 240) // lighter blue on hover
+      : color(255), // white on normal state
+  );
 
   // Draw the button shape
   rect(x, y, w, h, 12);

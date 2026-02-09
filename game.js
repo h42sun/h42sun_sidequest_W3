@@ -154,23 +154,3 @@ function gameKeyPressed() {
     currentScreen = "home";
   }
 }
-
-// // ------------------------------
-// // Game logic: win or lose
-// // ------------------------------
-// // This function decides what happens next in the game.
-// // It does NOT draw anything.
-// function triggerRandomOutcome() {
-//   // random() returns a value between 0 and 1
-//   // Here we use a 50/50 chance:
-//   // - less than 0.5 → win
-//   // - 0.5 or greater → lose
-//   //
-//   // You can bias this later, for example:
-//   // random() < 0.7 → 70% chance to win
-//   if (random() < 0.5) {
-//     currentScreen = "win";
-//   } else {
-//     currentScreen = "lose";
-//   }
-// }
