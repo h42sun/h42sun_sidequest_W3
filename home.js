@@ -56,11 +56,9 @@ function drawHome() {
       "Today was a good day. \n" +
       "\n" +
       "You went to the beach, smelled the salty sea air,\n" +
-      "\n" +
       "saw the blue waves crash against the soft, white sand...\n" +
       "\n" +
       "You saw all the beach has to offer, and picked up a pretty piece of seaglass as well.\n" +
-      "\n" +
       "\n" +
       "I wonder what tomorrow has in store for us.";
     //draw text.
@@ -81,12 +79,22 @@ function homeMousePressed() {
   // If the button is clicked, return to the start screen
   if (isHover(restartBtn)) {
     currentScreen = "start";
+    collect = 0;
+    leftVisited = false;
+    rightVisited = false;
+    straightVisited = false;
+    seaglassVisited = false;
   }
 }
 
 function homeKeyPressed() {
   if (key === "r" || key === "R" || keyCode === ENTER) {
     currentScreen = "start";
+    collect = 0;
+    leftVisited = false;
+    rightVisited = false;
+    straightVisited = false;
+    seaglassVisited = false;
   }
 }
 

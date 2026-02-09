@@ -48,8 +48,8 @@ function draw() {
   else if (currentScreen === "left") drawLeft();
   else if (currentScreen === "right") drawRight();
   else if (currentScreen === "straight") drawStraight();
-  else if (currentScreen === "home") drawHome();
   else if (currentScreen === "seaglass") drawSeaglass();
+  else if (currentScreen === "home") drawHome();
 }
 
 // ------------------------------
@@ -73,6 +73,7 @@ function mousePressed() {
   else if (currentScreen === "right") rightMousePressed?.();
   else if (currentScreen === "straight") straightMousePressed?.();
   else if (currentScreen === "seaglass") seaglassMousePressed?.();
+  else if (currentScreen === "home") homeMousePressed?.();
 }
 
 // ------------------------------
@@ -94,6 +95,7 @@ function keyPressed() {
   else if (currentScreen === "right") rightKeyPressed?.();
   else if (currentScreen === "straight") straightKeyPressed?.();
   else if (currentScreen === "seaglass") seaglassKeyPressed?.();
+  else if (currentScreen === "home") homeKeyPressed?.();
 }
 
 // Shared helper function: isHover()
